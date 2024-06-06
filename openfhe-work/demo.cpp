@@ -14,7 +14,7 @@ Plaintext maskCreate(std::vector<int64_t> m, CryptoContext<DCRTPoly> cryptoConte
 
 Plaintext identityMask(int size, int slots, CryptoContext<DCRTPoly> cryptoContext, KeyPair<DCRTPoly> keys) {
     std::vector<int64_t> v = {};
-    for (int i = 1; (unsigned) i <= slots; i++) {
+    for (int i = 1; i <= slots; i++) {
         if (i % (size) == 0) {
             v.push_back(0);
         } else {
@@ -39,7 +39,7 @@ Plaintext maskGenerate(int size, int index, CryptoContext<DCRTPoly> cryptoContex
 Plaintext clearMaskGenerate(int size, int slots, int index, CryptoContext<DCRTPoly> cryptoContext, KeyPair<DCRTPoly> keys) {
     std::vector<int64_t> v = {};
     int count = 1;
-    while(v.size() < slots) {
+    while(v.size() < (unsigned) slots) {
         for (int i = 0; i < pow(2, index-1)-1; i++) {
             v.push_back(1);
             count += 1;
