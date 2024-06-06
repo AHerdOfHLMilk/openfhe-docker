@@ -1,0 +1,3 @@
+/mnt/d/Work/ASTAR/openfhetest/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/Work/ASTAR/openfhetest/build/CMakeFiles/edit_cache.dir
+/mnt/d/Work/ASTAR/openfhetest/build/CMakeFiles/test.dir
