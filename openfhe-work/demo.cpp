@@ -14,7 +14,7 @@ Plaintext maskCreate(std::vector<int64_t> m, CryptoContext<DCRTPoly> cryptoConte
 
 Plaintext identityMask(int size, int slots, CryptoContext<DCRTPoly> cryptoContext, KeyPair<DCRTPoly> keys) {
     std::vector<int64_t> v = {};
-    for (int i = 1; i <= slots; i++) {
+    for (int i = 1; (unsigned) i <= slots; i++) {
         if (i % (size) == 0) {
             v.push_back(0);
         } else {
@@ -26,7 +26,7 @@ Plaintext identityMask(int size, int slots, CryptoContext<DCRTPoly> cryptoContex
 
 Plaintext maskGenerate(int size, int index, CryptoContext<DCRTPoly> cryptoContext, KeyPair<DCRTPoly> keys) {
     std::vector<int64_t> v = {};
-    while(v.size() < size) {
+    while(v.size() < (unsigned) size) {
         for (int i = 0; i < pow(2, index)-1; i++) {
             v.push_back(0);
         }
@@ -139,7 +139,7 @@ Ciphertext<DCRTPoly> downSweep(Ciphertext<DCRTPoly> cipher, CryptoContext<DCRTPo
 
 void prefixSum(std::vector<int64_t> v, int size) {
     std::vector<int> rotate_Index = {};
-    for (int i = 0; i <= v.size(); i++) {
+    for (int i = 0; (unsigned) i <= v.size(); i++) {
         rotate_Index.push_back(i);
         rotate_Index.push_back(-i);
     }
